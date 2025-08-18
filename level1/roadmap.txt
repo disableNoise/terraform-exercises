@@ -1,0 +1,21 @@
+Nivel 1: Fundamentos
+
+Hello EC2
+
+Crea una instancia EC2 t2.micro con una AMI de Ubuntu o Amazon Linux.
+
+Agrega un tag Name = "hello-terraform".
+
+Conéctate vía SSH para verificar.
+
+Variables básicas
+
+Define variables para la región y el tipo de instancia en variables.tf.
+
+Usa terraform.tfvars para cambiar fácilmente la región o el tipo.
+
+Outputs
+
+Expón la IP pública y el hostname privado de la instancia con output "public_ip" {}.
+
+Ejecuta terraform output y valida.

@@ -4,7 +4,7 @@ terraform {
 
     workspaces {
       project = "Learn Terraform Level 1"
-      name = "learn-terraform-level-1"
+      name    = "learn-terraform-level-1"
     }
   }
 
