@@ -1,0 +1,23 @@
+Nivel 4: Integración y práctica real
+
+Autoscaling básico con Terraform + Free Tier
+
+Define un Launch Template con Ubuntu y Nginx.
+
+Crea un Auto Scaling Group con mínimo 1 instancia y máximo 2.
+
+Usa un Elastic Load Balancer (ALB) para balancear tráfico.
+
+(Tip: todo esto está dentro del Free Tier si usas t2.micro).
+
+Infra multi-región
+
+Crea un bucket en us-east-1 y otro en us-west-2.
+
+Configura provider con alias y prueba replicación manual.
+
+Terraform State remoto
+
+Guarda tu estado en un bucket S3.
+
+Activa dynamodb_table para bloqueo de estado.

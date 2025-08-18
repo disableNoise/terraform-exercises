@@ -1,0 +1,25 @@
+Nivel 2: Redes y almacenamiento
+
+Security Group
+
+Crea un aws_security_group que permita:
+
+SSH (22) desde tu IP
+
+HTTP (80) desde cualquier lado
+
+Asigna ese SG a tu instancia EC2.
+
+S3 Bucket
+
+Crea un bucket S3 con nombre único (ej: mi-bucket-${random_id}).
+
+Agrega versioning y un tag Environment = "Dev".
+
+Usa aws_s3_bucket_object para subir un archivo de prueba.
+
+Par clave SSH
+
+Genera un tls_private_key con Terraform.
+
+Exporta el .pem y úsalo para conectarte a la instancia.
