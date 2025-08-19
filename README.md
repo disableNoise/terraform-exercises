@@ -1,3 +1,6 @@
+EJERCICIOS PARA PRACTICAR TERRAFORM.
+Se solicitó a ChatGPT una serie de ejercicios para el aprendizaje de esta herramienta.
+
 🟢 Nivel 1: Fundamentos
 
 - Hello EC2
