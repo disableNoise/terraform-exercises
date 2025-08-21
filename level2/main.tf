@@ -55,3 +55,21 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
+resource "aws_s3_bucket" "example" {
+  bucket = "mi-bucket-celgueda-001"
+  
+  versioning {
+    enabled = true
+  }
+
+  tags = {
+    Environment = "Dev"
+  }
+}
+
+resource "aws_s3_object" "object" {
+  bucket = "mi-bucket-celgueda-001"
+  key = "archivo"
+  source = "hola.txt"
+}
+
