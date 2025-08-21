@@ -7,3 +7,8 @@ output "instance_ip" {
   description = "public ip of the instance"
   value       = aws_instance.app_server.public_ip
 }
+
+output "private_key" {
+  value	    = tls_private_key.example.private_key_pem
+  sensitive = true
+}

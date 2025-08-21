@@ -17,11 +17,14 @@ resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = var.instance_type
   vpc_security_group_ids = [aws_security_group.level2_sg.id]
+  key_name	= aws_key_pair.generated_key.key_name
 
   tags = {
     Name = "hello-terraform"
   }
 }
+
+#### security group ####
 
 resource "aws_security_group" "level2_sg" {
   name        = "level2_sg"
@@ -55,6 +58,8 @@ resource "aws_vpc_security_group_egress_rule" "allow_all_traffic_ipv4" {
   ip_protocol       = "-1" # semantically equivalent to all ports
 }
 
+#### s3 bucket ####
+
 resource "aws_s3_bucket" "example" {
   bucket = "mi-bucket-celgueda-001"
   
@@ -73,3 +78,14 @@ resource "aws_s3_object" "object" {
   source = "hola.txt"
 }
 
+#### key pair ####
+
+resource "tls_private_key" "example" {
+  algorithm = "RSA"
+  rsa_bits = 4096
+}
+
+resource "aws_key_pair" "generated_key" {
+  key_name = "aws_keys_pairs"
+  public_key = tls_private_key.public_key_openssh
+}
