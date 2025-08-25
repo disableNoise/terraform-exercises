@@ -20,10 +20,11 @@ resource "aws_instance" "app_server" {
   key_name	= aws_key_pair.generated_key.key_name
 
   user_data = <<-EOL
-  #!/bin/bash
-  apt install apache2
-  echo "hola mundo cruel" > /var/www/html/index.html
-  systemctl restart apache2
+    #!/bin/bash -xe
+    touch $HOME/test
+    apt install apache2 -y
+    echo "hola mundo cruel" > /var/www/html/index.html
+    systemctl restart apache2
   EOL
 
   tags = {
