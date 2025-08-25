@@ -21,6 +21,7 @@ module "ec2_instance" {
   name = "single-instance"
   instance_type = "t3.micro"
   ami = "data.aws_ami.ubuntu.id"
+  subnet_id = "subnet-0f82a71265c08273e"
   tags = {
     Name = "hello-terraform"
   }
